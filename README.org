@@ -1,4 +1,4 @@
-#+STARTUP: overview indent num hidestars
+#+STARTUP: overview indent hidestars
 #+TITLE My dot files
 #+AUTHOR ychubachi
 #+DATE 2021-10-23
