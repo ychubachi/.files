@@ -7,20 +7,21 @@
 dotfilesです。GNU stowを利用します。
 
 * 利用法
-- 利用法は次の通りです。
+利用法は次の通りです。
 
 #+begin_src bash
   git clone git@github.com:ychubachi/.files.git
   stow bash
+  stow git
   stow ...
 #+end_src
 
-- すでに同名の.fileがあるとエラーになります。
+すでに同名のファイル（.bashrc等）があるとエラーになります。
 
 #+begin_example
-WARNING! stowing hoge would cause conflicts:
-  * existing target is neither a link nor a directory: .hoge
-All operations aborted.
+  WARNING! stowing hoge would cause conflicts:
+    * existing target is neither a link nor a directory: .hoge
+  All operations aborted.
 #+end_example
 
 * 文献
