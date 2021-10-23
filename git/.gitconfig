@@ -1,0 +1,5 @@
+[user]
+	email = yoshi@chubachi.net
+	name = Yoshihide Chubachi
+[core]
+	autocrlf = input
