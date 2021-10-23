@@ -1,7 +1,7 @@
 #+STARTUP: overview indent hidestars
-#+TITLE My dot files
-#+AUTHOR ychubachi
-#+DATE 2021-10-23
+#+TITLE: My dot files
+#+AUTHOR: ychubachi
+#+DATE: 2021-10-23
 
 * .files
 dotfilesです。GNU stowを利用します。
