@@ -165,6 +165,6 @@ export NO_AT_BRIDGE=1
 
 eval "$(/home/yc/.linuxbrew/bin/brew shellenv)"
 
-if [-f ~/.xmodmap];then
+if [ -f ~/.xmodmap ];then
     xmodmap ~/.xmodmap
 fi

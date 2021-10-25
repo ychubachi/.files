@@ -1,5 +1,37 @@
-!keycode 129 = Henkan_Mode Mode_switch Henkan_Mode Mode_switch
-keycode 129 = Alt_R
+! Use xmodmap -pke to check.
+! Use setxkbmap command to reset.
 
+! TODO:
+! altキーに設定するのはOK controlキーには設定できない？
+! IMEが邪魔しているのかも
+
+! 変換キー（右）
+! keycode 129 = Henkan_Mode Mode_switch Henkan_Mode Mode_switch
+! keycode 129 = Control_R Control_R Control_R Control_R
+! keycode 129 = Alt_R Alt_R Alt_R Alt_R
+
+! 無変換キー（左）
 ! keycode 131 = Muhenkan NoSymbol Muhenkan
-keycode 131 = Alt_L
+keycode 131 = Alt_R Meta_R Alt_R Meta_R
+! keycode 131 = Control_R Control_R Control_R Control_R
+
+! カナキー（右）
+! keycode 208 = Hiragana_Katakana Romaji Hiragana_Katakana Romaji
+! keycode 208 = Alt_L <- 動かない
+
+!clear Shift
+!clear Lock
+!clear Control
+!clear Mod1
+!clear Mod2
+!clear Mod3
+!clear Mod4
+!clear Mod5
+!add Shift   = Shift_L Shift_R
+!add Lock    = Caps_Lock
+!add Control = Control_L Control_R Henkan_Mode
+!add Mod1    = Alt_L Alt_R
+!add Mod2    = Mode_switch
+!add Mod3    =
+!add Mod4    = Super_L Super_R
+!add Mod5    =
