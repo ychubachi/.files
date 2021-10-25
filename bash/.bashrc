@@ -117,6 +117,8 @@ if ! shopt -oq posix; then
 fi
 
 # Edited by YC
+cd $HOME
+
 export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0
 setxkbmap jp -model pc106
 
@@ -163,7 +165,6 @@ export NO_AT_BRIDGE=1
 
 eval "$(/home/yc/.linuxbrew/bin/brew shellenv)"
 
-cd $HOME
 if [-f ~/.xmodmap];then
     xmodmap ~/.xmodmap
 fi
