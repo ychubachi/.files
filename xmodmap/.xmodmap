@@ -1,0 +1,5 @@
+!keycode 129 = Henkan_Mode Mode_switch Henkan_Mode Mode_switch
+keycode 129 = Alt_R
+
+! keycode 131 = Muhenkan NoSymbol Muhenkan
+keycode 131 = Alt_L
