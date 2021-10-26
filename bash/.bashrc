@@ -119,7 +119,10 @@ fi
 # Edited by YC
 cd $HOME
 
-export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0
+if [ -z $DISPLAY ]; then
+  export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0
+fi
+
 setxkbmap jp -model pc106
 
 export GTK_IM_MODULE=fcitx
@@ -163,7 +166,8 @@ export DBUS_SESSION_BUS_ADDRESS
 # Emacs: disable to display dbind-WARNING
 export NO_AT_BRIDGE=1
 
-eval "$(/home/yc/.linuxbrew/bin/brew shellenv)"
+# eval "$(/home/yc/.linuxbrew/bin/brew shellenv)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 if [ -f ~/.xmodmap ];then
     xmodmap ~/.xmodmap
