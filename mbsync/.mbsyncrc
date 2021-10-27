@@ -29,10 +29,17 @@ Inbox ~/Maildir/Gmail/Inbox
 
 # Group
 Group gmail
+Channel gmail-default
 Channel gmail-starred
 Channel gmail-important
 Channel gmail-sent
 Channel gmail-draft
+
+Channel gmail-default
+Far  :gmail-remote:
+Near :gmail-local:
+# Select some mailboxes to sync
+Patterns "INBOX"
 
 Channel gmail-starred      # 「スター付き」 を sttared に
 Far  :gmail-remote:"[Gmail]/&MLkwvzD8TtgwTQ-"
