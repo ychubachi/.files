@@ -1,0 +1,55 @@
+# Account
+# Account
+IMAPAccount gmail-account
+Host imap.gmail.com
+User yc@aiit.ac.jp
+PassCmd "gpg --quiet --for-your-eyes-only --no-tty --decrypt ~/.mailpass.gpg"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+# Remote
+IMAPStore gmail-remote
+Account gmail-account
+
+# Local
+MaildirStore gmail-local
+Path ~/Maildir/Gmail/
+Inbox ~/Maildir/Gmail/Inbox
+
+#         Gmail IMAP 日本語フォルダ UTF-7対応表
+# | 修正UTF-7               | 変換結果       | 英語表記  |
+# |-------------------------+----------------+-----------|
+# | '&MLkwvzD8TtgwTQ-'      | スター付き     | Starred   |
+# | '&kc2JgQ-'              | 重要           | Important |
+# | '&kAFP4W4IMH8w4TD8MOs-' | 送信済みメール | Sent Mail |
+# | '&Tgtm+DBN-'            | 下書き         | Draft     |
+# | '&MFkweTBmMG4w4TD8MOs-' | すべてのメール | All Mail  |
+# | '&j,dg0TDhMPww6w-'      | 迷惑メール     | Spam      |
+# | '&MLQw33ux-'            | ゴミ箱         | Trash     |
+
+# Group
+Group gmail
+Channel gmail-starred
+Channel gmail-important
+Channel gmail-sent
+Channel gmail-draft
+
+Channel gmail-starred      # 「スター付き」 を sttared に
+Far  :gmail-remote:"[Gmail]/&MLkwvzD8TtgwTQ-"
+Near :gmail-local:starred
+Create Near
+
+Channel gmail-important   # 「重要」を important に
+Far  :gmail-remote:"[Gmail]/&kc2JgQ-"
+Near :gmail-local:important
+Create Near
+
+Channel gmail-sent        # 「送信済みメール」を sent に
+Far  :gmail-remote:"[Gmail]/&kAFP4W4IMH8w4TD8MOs-"
+Near :gmail-local:sent
+Create Near
+
+Channel gmail-draft       # 「下書き」を draft に
+Far  :gmail-remote:"[Gmail]/&Tgtm+DBN-"
+Near :gmail-local:draft
+Create Near
