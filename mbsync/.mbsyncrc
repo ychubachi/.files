@@ -29,34 +29,45 @@ Inbox ~/Maildir/Gmail/Inbox
 
 # Group
 Group gmail
-Channel gmail-default
-Channel gmail-starred
-Channel gmail-important
-Channel gmail-sent
-Channel gmail-draft
+Channel gmail-inbox
+Channel gmail-archive
+# Channel gmail-starred
+# Channel gmail-important
+# Channel gmail-sent
+# Channel gmail-draft
+# Channel gmail-trash
 
-Channel gmail-default
-Far  :gmail-remote:
-Near :gmail-local:
-# Select some mailboxes to sync
-Patterns "INBOX"
-
-Channel gmail-starred      # 「スター付き」 を sttared に
-Far  :gmail-remote:"[Gmail]/&MLkwvzD8TtgwTQ-"
-Near :gmail-local:starred
+Channel gmail-inbox      # 「INBOX」 を inbox に
+Far  :gmail-remote:"INBOX"
+Near :gmail-local:inbox
 Create Near
 
-Channel gmail-important   # 「重要」を important に
-Far  :gmail-remote:"[Gmail]/&kc2JgQ-"
-Near :gmail-local:important
+Channel gmail-archive     # 「全てのメール」を archive に
+Far  :gmail-remote:"[Gmail]/&MFkweTBmMG4w4TD8MOs-"
+Near :gmail-local:archive
 Create Near
 
-Channel gmail-sent        # 「送信済みメール」を sent に
-Far  :gmail-remote:"[Gmail]/&kAFP4W4IMH8w4TD8MOs-"
-Near :gmail-local:sent
-Create Near
+# Channel gmail-starred      # 「スター付き」 を sttared に
+# Far  :gmail-remote:"[Gmail]/&MLkwvzD8TtgwTQ-"
+# Near :gmail-local:starred
+# Create Near
 
-Channel gmail-draft       # 「下書き」を draft に
-Far  :gmail-remote:"[Gmail]/&Tgtm+DBN-"
-Near :gmail-local:draft
-Create Near
+# Channel gmail-important   # 「重要」を important に
+# Far  :gmail-remote:"[Gmail]/&kc2JgQ-"
+# Near :gmail-local:important
+# Create Near
+
+# Channel gmail-sent        # 「送信済みメール」を sent に
+# Far  :gmail-remote:"[Gmail]/&kAFP4W4IMH8w4TD8MOs-"
+# Near :gmail-local:sent
+# Create Near
+
+# Channel gmail-draft       # 「下書き」を draft に
+# Far  :gmail-remote:"[Gmail]/&Tgtm+DBN-"
+# Near :gmail-local:draft
+# Create Near
+
+# Channel gmail-trash       # 「ゴミ箱」を trash に
+# Far  :gmail-remote:"[Gmail]/&MLQw33ux-"
+# Near :gmail-local:trash
+# Create Near
