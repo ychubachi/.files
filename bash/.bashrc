@@ -172,3 +172,7 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 if [ -f ~/.xmodmap ];then
     xmodmap ~/.xmodmap
 fi
+
+# Node.js
+export PATH="$HOME/.nodenv/bin:$PATH"
+eval "$(nodenv init -)"
