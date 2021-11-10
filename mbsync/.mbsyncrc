@@ -18,14 +18,15 @@ SubFolders Verbatim
 IMAPStore gmail-remote
 Account gmail-account
 
-# Channels
-Channel gmail
-Far  :gmail-remote:
-Near :gmail-local:
-Patterns * # Use Gmail settings to select visible Maildirs
-Create Both
-Remove Near
-SyncState *
+# Group
+Group gmail
+Channel gmail-inbox
+Channel gmail-archive
+Channel gmail-sent
+Channel gmail-draft
+Channel gmail-trash
+# Channel gmail-starred
+# Channel gmail-important
 
 #         Gmail IMAP 日本語フォルダ UTF-7対応表
 # | 修正UTF-7               | 変換結果       | 英語表記  |
@@ -37,3 +38,43 @@ SyncState *
 # | '&Tgtm+DBN-'            | 下書き         | Draft     |
 # | '&j,dg0TDhMPww6w-'      | 迷惑メール     | Spam      |
 # | '&MLQw33ux-'            | ゴミ箱         | Trash     |
+
+Channel gmail-inbox      # 「INBOX」 を inbox に
+Far  :gmail-remote:"INBOX"
+Near :gmail-local:inbox
+Create Near
+SyncState *
+
+Channel gmail-archive     # 「全てのメール」を archive に
+Far  :gmail-remote:"[Gmail]/&MFkweTBmMG4w4TD8MOs-"
+Near :gmail-local:archive
+Create Near
+SyncState *
+
+Channel gmail-sent        # 「送信済みメール」を sent に
+Far  :gmail-remote:"[Gmail]/&kAFP4W4IMH8w4TD8MOs-"
+Near :gmail-local:sent
+Create Near
+SyncState *
+
+Channel gmail-draft       # 「下書き」を draft に
+Far  :gmail-remote:"[Gmail]/&Tgtm+DBN-"
+Near :gmail-local:draft
+Create Near
+SyncState *
+
+Channel gmail-trash       # 「ゴミ箱」を trash に
+Far  :gmail-remote:"[Gmail]/&MLQw33ux-"
+Near :gmail-local:trash
+Create Near
+SyncState *
+
+# Channel gmail-starred      # 「スター付き」 を sttared に
+# Far  :gmail-remote:"[Gmail]/&MLkwvzD8TtgwTQ-"
+# Near :gmail-local:starred
+# Create Near
+
+# Channel gmail-important   # 「重要」を important に
+# Far  :gmail-remote:"[Gmail]/&kc2JgQ-"
+# Near :gmail-local:important
+# Create Near
