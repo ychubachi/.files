@@ -176,3 +176,6 @@ fi
 # Node.js
 export PATH="$HOME/.nodenv/bin:$PATH"
 eval "$(nodenv init -)"
+
+# X resources
+[[ -f ~/.Xresources ]] && xrdb ~/.Xresources
