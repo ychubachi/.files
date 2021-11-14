@@ -179,3 +179,6 @@ eval "$(nodenv init -)"
 
 # X resources
 [[ -f ~/.Xresources ]] && xrdb ~/.Xresources
+
+# mu/mu4e
+export XAPIAN_CJK_NGRAM=1

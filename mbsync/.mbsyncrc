@@ -1,5 +1,11 @@
 # See: mbsync https://isync.sourceforge.io/mbsync.html#CONFIGURATION
 
+CopyArrivalDate yes  # Don't mess up message timestamps when moving them between folders.
+Sync Pull            # Download changes only, don't sync local changes up to the server.
+Create Near         # Automatically create new folders in the local copy.
+Remove Near         # Automatically remove deleted folders from the local copy.
+Expunge Near        # Expunge deleted messages from the local copy.
+
 # IMAP4 Account
 IMAPAccount gmail-account
 Host imap.gmail.com
