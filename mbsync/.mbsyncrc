@@ -1,10 +1,10 @@
 # See: mbsync https://isync.sourceforge.io/mbsync.html#CONFIGURATION
 
 CopyArrivalDate yes  # Don't mess up message timestamps when moving them between folders.
-Sync Pull            # Download changes only, don't sync local changes up to the server.
 Create Near         # Automatically create new folders in the local copy.
 Remove Near         # Automatically remove deleted folders from the local copy.
 Expunge Near        # Expunge deleted messages from the local copy.
+SyncState *
 
 # IMAP4 Account
 IMAPAccount gmail-account
@@ -16,8 +16,8 @@ CertificateFile /etc/ssl/certs/ca-certificates.crt
 
 # Maildir Stores (Local)
 MaildirStore gmail-local
-Path ~/Maildir/Gmail/
-Inbox ~/Maildir/Gmail/Inbox
+Path ~/Mail/Gmail/
+Inbox ~/Mail/Gmail/inbox
 SubFolders Verbatim
 
 # IMAP Stores (Remote)
@@ -27,53 +27,42 @@ Account gmail-account
 # Group
 Group gmail
 Channel gmail-inbox
-Channel gmail-archive
+Channel gmail-all_mail
 Channel gmail-sent
 Channel gmail-draft
 Channel gmail-trash
-# Channel gmail-starred
-# Channel gmail-important
 
 #         Gmail IMAP 日本語フォルダ UTF-7対応表
 # | 修正UTF-7               | 変換結果       | 英語表記  |
 # |-------------------------+----------------+-----------|
+# | '&MFkweTBmMG4w4TD8MOs-' | 受信トレイ     | Inbox     |
 # | '&MFkweTBmMG4w4TD8MOs-' | すべてのメール | All Mail  |
-# | '&MLkwvzD8TtgwTQ-'      | スター付き     | Starred   |
-# | '&kc2JgQ-'              | 重要           | Important |
 # | '&kAFP4W4IMH8w4TD8MOs-' | 送信済みメール | Sent Mail |
 # | '&Tgtm+DBN-'            | 下書き         | Draft     |
-# | '&j,dg0TDhMPww6w-'      | 迷惑メール     | Spam      |
 # | '&MLQw33ux-'            | ゴミ箱         | Trash     |
+# | '&MLkwvzD8TtgwTQ-'      | スター付き     | Starred   |
+# | '&kc2JgQ-'              | 重要           | Important |
+# | '&j,dg0TDhMPww6w-'      | 迷惑メール     | Spam      |
 
 Channel gmail-inbox      # 「INBOX」 を inbox に
 Far  :gmail-remote:"INBOX"
 Near :gmail-local:inbox
-Create Near
-SyncState *
 
 Channel gmail-archive     # 「全てのメール」を archive に
 Far  :gmail-remote:"[Gmail]/&MFkweTBmMG4w4TD8MOs-"
-Near :gmail-local:archive
-Create Near
-SyncState *
+Near :gmail-local:all_mail
 
 Channel gmail-sent        # 「送信済みメール」を sent に
 Far  :gmail-remote:"[Gmail]/&kAFP4W4IMH8w4TD8MOs-"
 Near :gmail-local:sent
-Create Near
-SyncState *
 
 Channel gmail-draft       # 「下書き」を draft に
 Far  :gmail-remote:"[Gmail]/&Tgtm+DBN-"
 Near :gmail-local:draft
-Create Near
-SyncState *
 
 Channel gmail-trash       # 「ゴミ箱」を trash に
 Far  :gmail-remote:"[Gmail]/&MLQw33ux-"
 Near :gmail-local:trash
-Create Near
-SyncState *
 
 # Channel gmail-starred      # 「スター付き」 を sttared に
 # Far  :gmail-remote:"[Gmail]/&MLkwvzD8TtgwTQ-"
