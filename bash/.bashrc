@@ -145,9 +145,9 @@ GIT_PS1_SHOWUNTRACKEDFILES=true
 GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWUPSTREAM=auto
 
-export MANPATH=$MANPATH:/usr/local/texlive/2021/texmf-dist/doc/man
-export INFOPATH=$INFOPATH:/usr/local/texlive/2021/texmf-dist/doc/info
-export PATH=$PATH:/usr/local/texlive/2021/bin/x86_64-linux
+export MANPATH=/usr/local/texlive/2021/texmf-dist/doc/man:$MANPATH
+export INFOPATH=/usr/local/texlive/2021/texmf-dist/doc/info:$INFOPATH
+export PATH=/usr/local/texlive/2021/bin/x86_64-linux:$PATH
 
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
@@ -158,7 +158,10 @@ if [ $SHLVL = 1 ] ; then
   xset -r 49  > /dev/null 2>&1
 fi
 
-eval "$(rbenv init -)"
+# $ sudo apt install rbenv
+if [ -d ~/.rbenv ]; then
+   eval "$(rbenv init -)"
+fi
 
 eval $(dbus-launch)
 export DBUS_SESSION_BUS_ADDRESS
@@ -166,16 +169,19 @@ export DBUS_SESSION_BUS_ADDRESS
 # Emacs: disable to display dbind-WARNING
 export NO_AT_BRIDGE=1
 
-# eval "$(/home/yc/.linuxbrew/bin/brew shellenv)"
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+if [ -d /home/linuxbrew/.linuxbrew ]; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
 
 if [ -f ~/.xmodmap ];then
     xmodmap ~/.xmodmap
 fi
 
 # Node.js
-export PATH="$HOME/.nodenv/bin:$PATH"
-eval "$(nodenv init -)"
+if [ -d ~/.nodenv ]; then
+    export PATH="$HOME/.nodenv/bin:$PATH"
+    eval "$(nodenv init -)"
+fi
 
 # X resources
 [[ -f ~/.Xresources ]] && xrdb ~/.Xresources
