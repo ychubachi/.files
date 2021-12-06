@@ -1,6 +1,6 @@
 !! ~/.Xresources
 
-Emacs.font: Noto Sans Mono CJK JP-12
+Emacs.font: Ricty-14
 Emacs.lineSpacing: 0
 
 Emacs.geometry: 220x38-80+50
@@ -12,5 +12,3 @@ Emacs.menuBar: on
 Emacs.toolBar: off
 Emacs.tabBar: on
 Emacs.verticalScrollBars: off
-
-Eamcs.useXIM: off
