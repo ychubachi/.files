@@ -3,7 +3,7 @@
 Emacs.font: Ricty-14
 Emacs.lineSpacing: 0
 
-Emacs.geometry: 220x38-80+50
+Emacs.geometry: 205x50-30+50
 
 Emacs.cursorBlink: off
 Emacs.coursorColor: dark green
