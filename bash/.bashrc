@@ -158,6 +158,7 @@ if [ $SHLVL = 1 ] ; then
   xset -r 49  > /dev/null 2>&1
 fi
 
+export PATH=~/.rbenv/bin:$PATH
 eval "$(rbenv init -)"
 
 eval $(dbus-launch)
