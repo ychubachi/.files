@@ -160,7 +160,8 @@ fi
 
 # $ sudo apt install rbenv
 if [ -d ~/.rbenv ]; then
-   eval "$(rbenv init -)"
+  export PATH=~/.rbenv/bin:$PATH
+  eval "$(rbenv init -)"
 fi
 
 eval $(dbus-launch)
