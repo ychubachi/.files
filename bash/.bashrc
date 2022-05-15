@@ -164,6 +164,9 @@ if [ -d ~/.rbenv ]; then
   eval "$(rbenv init -)"
 fi
 
+alias bi='bundle install'
+alias be='bundle exec'
+
 eval $(dbus-launch)
 export DBUS_SESSION_BUS_ADDRESS
 

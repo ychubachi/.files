@@ -13,36 +13,18 @@
 
 # ref: https://texwiki.texjp.org/?Latexmk
 
-$latex     = 'platex  -shell-escape %O -synctex=1 %S';
-$pdflatex  = 'pdflatex -shell-escape %O -synctex=1 %S';
-$lualatex  = 'lualatex -shell-escape %O -synctex=1 %S';
-$xelatex   = 'xelatex  -shell-escape %O -synctex=1 %S';
+$latex_option = '-shell-escape %O -synctex=1 -halt-on-error -interaction=nonstopmode -file-line-error %S';
+
+$latex     = 'uplatex  ' . $latex_option;
+$pdflatex  = 'pdflatex ' . $latex_option;
+$lualatex  = 'lualatex ' . $latex_option;
+$xelatex   = 'xelatex  ' . $latex_option;
 $biber     = 'biber %O --bblencoding=utf8 -u -U --output_safechars %B';
-$bibtex    = 'pbibtex %O %B';
+$bibtex    = 'upbibtex %O %B';
 $makeindex = 'upmendex %O -o %D %S';
 $dvipdf    = 'dvipdfmx %O -o %D %S';
 $dvips     = 'dvips %O -z -f %S | convbkmk -u > %D';
 $ps2pdf    = 'ps2pdf %O %S %D';
-if ($^O eq 'darwin') {
-    $pvc_view_file_via_temporary = 0;
-    $pdf_previewer = 'open -ga /Applications/Skim.app';
-} else {
-    $pdf_previewer = 'xdg-open';
-}
-
+$pdf_mode  = 3;
+$pdf_previewer = 'evince';
 $preview_continuous_mode = 1;
-
-# #!/usr/bin/env perl
-# $latex            = 'platex -shell-escape';
-# $bibtex           = 'pbibtex';
-# $dvipdf           = 'dvipdfmx -o %D %S';
-# $max_repeat       = 5;
-# $pdf_mode         = 3; # generates pdf via dvipdfmx
-
-# # Prevent latexmk from removing PDF after typeset.
-# # This enables Skim to chase the update in PDF automatically.
-# $pvc_view_file_via_temporary = 0;
-
-# # Use evince as a previewer
-# $pdf_previewer    = "evince";
-# $preview_continuous_mode = 1;
