@@ -4,7 +4,8 @@
 Emacs.font: Noto Sans Mono CJK JP
 !Emacs.lineSpacing: 10
 
-Emacs.geometry: 205x50-30+50
+!Emacs.geometry: 20x10-0+0
+Emacs.geometry: 230x38
 
 Emacs.cursorBlink: off
 Emacs.coursorColor: dark green
