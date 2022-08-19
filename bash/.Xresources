@@ -1,7 +1,8 @@
 !! ~/.Xresources
 
-Emacs.font: Ricty-14
-Emacs.lineSpacing: 0
+!Emacs.font: Ricty Diminished-14
+Emacs.font: Noto Sans Mono CJK JP
+!Emacs.lineSpacing: 10
 
 Emacs.geometry: 205x50-30+50
 
