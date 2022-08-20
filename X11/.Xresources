@@ -1,0 +1,27 @@
+!! Usage: xrdb ~/.Xresources
+
+!===============================================================================
+!        1         2         3         4         5         6         7         8
+!2345678901234567890123456789012345678901234567890123456789012345678901234567890
+!===============================================================================
+
+!!! Geometry
+Emacs.geometry: 120x30+0+0
+Emacs.lineSpacing: 0
+
+!!! Fonts
+!! $ apt install fonts-ricty-diminished
+! Emacs.font: Ricty Diminished
+!! $ apt install fonts-noto
+Emacs.font: Noto Sans Mono CJK JP
+
+!!! Look and Feel
+Emacs.cursorBlink: off
+!Emacs.coursorColor: dark green
+!Emacs.menuBar: on
+Emacs.toolBar: off
+!Emacs.tabBar: on
+Emacs.verticalScrollBars: on
+
+!!! IME
+Emacs.useXIM: off
