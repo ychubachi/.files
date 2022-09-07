@@ -137,9 +137,9 @@ GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWUPSTREAM=auto
 
 ## TexLive
-export MANPATH=/usr/local/texlive/2021/texmf-dist/doc/man:$MANPATH
-export INFOPATH=/usr/local/texlive/2021/texmf-dist/doc/info:$INFOPATH
-export PATH=/usr/local/texlive/2021/bin/x86_64-linux:$PATH
+export MANPATH=/usr/local/texlive/2022/texmf-dist/doc/man:$MANPATH
+export INFOPATH=/usr/local/texlive/2022/texmf-dist/doc/info:$INFOPATH
+export PATH=/usr/local/texlive/2022/bin/x86_64-linux:$PATH
 
 ## IME
 export GTK_IM_MODULE=fcitx
@@ -160,8 +160,8 @@ fi
 alias bi='bundle install'
 alias be='bundle exec'
 
-eval $(dbus-launch)
-export DBUS_SESSION_BUS_ADDRESS
+# eval $(dbus-launch)
+# export DBUS_SESSION_BUS_ADDRESS
 
 # Emacs: disable to display dbind-WARNING
 export NO_AT_BRIDGE=1
@@ -181,7 +181,12 @@ if [ -d ~/.nodenv ]; then
 fi
 
 # X resources
-[[ -f ~/.Xresources ]] && xrdb ~/.Xresources
+# [[ -f ~/.Xresources ]] && xrdb ~/.Xresources
 
 # mu/mu4e
 export XAPIAN_CJK_NGRAM=1
+
+### For kirin
+if [ $HOSTNAME = "kirin" ]; then
+	. .bashrc.kirin
+fi

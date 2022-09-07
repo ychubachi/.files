@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo "### Welcome to kirin! ###"
+
+echo -n "+ starting dropbox"
+dropbox start > /dev/null 2>&1
+echo " -> done"
