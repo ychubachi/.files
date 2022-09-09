@@ -21,7 +21,7 @@ Emacs.cursorBlink: off
 !Emacs.menuBar: on
 Emacs.toolBar: off
 !Emacs.tabBar: on
-Emacs.verticalScrollBars: on
+Emacs.verticalScrollBars: off
 
 !!! IME
 Emacs.useXIM: off

@@ -116,7 +116,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Edited by YC
+########################################################################
+# Settings by YC
+########################################################################
 
 # setxkbmap jp -model pc106
 
@@ -141,17 +143,23 @@ export MANPATH=/usr/local/texlive/2022/texmf-dist/doc/man:$MANPATH
 export INFOPATH=/usr/local/texlive/2022/texmf-dist/doc/info:$INFOPATH
 export PATH=/usr/local/texlive/2022/bin/x86_64-linux:$PATH
 
-## IME
+## IME (fcitx)
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 export DefaultIMModule=fcitx
+
 if [ $SHLVL = 1 ] ; then
   (fcitx-autostart > /dev/null 2>&1 &)
   xset -r 49  > /dev/null 2>&1
 fi
 
-# $ sudo apt install rbenv
+## xmodmap
+if [ -f ~/.xmodmap ];then
+    xmodmap ~/.xmodmap
+fi
+
+## Ruby
 if [ -d ~/.rbenv ]; then
   export PATH=~/.rbenv/bin:$PATH
   eval "$(rbenv init -)"
@@ -160,33 +168,38 @@ fi
 alias bi='bundle install'
 alias be='bundle exec'
 
-# eval $(dbus-launch)
-# export DBUS_SESSION_BUS_ADDRESS
-
-# Emacs: disable to display dbind-WARNING
-export NO_AT_BRIDGE=1
-
-if [ -d /home/linuxbrew/.linuxbrew ]; then
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-fi
-
-if [ -f ~/.xmodmap ];then
-    xmodmap ~/.xmodmap
-fi
-
 # Node.js
 if [ -d ~/.nodenv ]; then
     export PATH="$HOME/.nodenv/bin:$PATH"
     eval "$(nodenv init -)"
 fi
 
+## linuxbrew
+if [ -d /home/linuxbrew/.linuxbrew ]; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+
 # X resources
-# [[ -f ~/.Xresources ]] && xrdb ~/.Xresources
+[[ -f ~/.Xresources ]] && xrdb ~/.Xresources
 
 # mu/mu4e
 export XAPIAN_CJK_NGRAM=1
 
-### For kirin
+## For kirin
 if [ $HOSTNAME = "kirin" ]; then
-	. .bashrc.kirin
+    echo
+    echo "### Welcome to kirin! ###"
+
+    dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
+
+    echo -n "+ starting dropbox"
+    dropbox start > /dev/null 2>&1
+    echo " -> done"
 fi
+
+## Junk
+# eval $(dbus-launch)
+# export DBUS_SESSION_BUS_ADDRESS
+
+# Emacs: disable to display dbind-WARNING
+# export NO_AT_BRIDGE=1
