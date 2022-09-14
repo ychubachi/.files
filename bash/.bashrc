@@ -190,11 +190,16 @@ if [ $HOSTNAME = "kirin" ]; then
     echo
     echo "### Welcome to kirin! ###"
 
-    dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
-
+    # Dropboxを起動する
     echo -n "+ starting dropbox"
     dropbox start > /dev/null 2>&1
     echo " -> done"
+
+    # X11 forwardのとき、gnomeアプリの起動を早くする
+    dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
+
+    # emacs起動時のWarningを抑制する
+    alias emacs='dbus-launch emacs'
 fi
 
 ## Junk
