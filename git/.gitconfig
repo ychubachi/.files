@@ -4,3 +4,5 @@
 [core]
 	autocrlf = input
 	autocrlf = input
+[init]
+	defaultBranch = main

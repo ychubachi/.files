@@ -13,7 +13,7 @@ Emacs.lineSpacing: 0
 !! $ apt install fonts-ricty-diminished
 ! Emacs.font: Ricty Diminished
 !! $ apt install fonts-noto
-Emacs.font: Noto Sans Mono CJK JP
+Emacs.font: Noto Sans Mono CJK JP-10
 
 !!! Look and Feel
 Emacs.cursorBlink: off
