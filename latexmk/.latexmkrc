@@ -13,14 +13,17 @@
 #
 # ref: https://texwiki.texjp.org/?Latexmk
 
+# 注意：PowerShellではファイル名がうまく引き渡せません
+
 # latex共通オプション
-$latex_option = '-shell-escape %O -synctex=1 -halt-on-error -interaction=nonstopmode -file-line-error %S';
+$latex_option = '-shell-escape %O -synctex=1 -halt-on-error -interaction=nonstopmode -file-line-error';
 
 # pLaTeX関連 (uplatexを使うならlualatexを使うこと）
-$latex     = 'uplatex ' . $latex_option;
+$latex     = 'uplatex  ' . $latex_option;
 if ($^O eq 'MSWin32') {
-    $latex = $latex . ' -kanji=utf8 -no-guess-input-enc';
+    $latex = $latex . ' -kanji=utf8 -no-guess-input-enc ';
 }
+$latex = $latex . ' %S';
 $bibtex    = 'upbibtex %O %B';
 $dvipdf    = 'dvipdfmx %O -o %D %S';
 
@@ -52,5 +55,5 @@ if ($^O eq 'linux') {
     $pdf_previewer = "open %S";
 } else {
     $dvi_previewer = "start %S";
-    $pdf_previewer = "start %S";
+    $pdf_previewer = "sumatrapdf %S";
 }
