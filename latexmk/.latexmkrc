@@ -17,9 +17,9 @@
 $latex_option = '-shell-escape %O -synctex=1 -halt-on-error -interaction=nonstopmode -file-line-error %S';
 
 # pLaTeX関連 (uplatexを使うならlualatexを使うこと）
-$latex     = 'uplatex  ' . $latex_option;
+$latex     = 'uplatex ' . $latex_option;
 if ($^O eq 'MSWin32') {
-    $latex = $latex . '-kanji=utf8 -no-guess-input-enc ';
+    $latex = $latex . ' -kanji=utf8 -no-guess-input-enc';
 }
 $bibtex    = 'upbibtex %O %B';
 $dvipdf    = 'dvipdfmx %O -o %D %S';
