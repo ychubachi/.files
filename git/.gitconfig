@@ -4,5 +4,7 @@
 [core]
 	autocrlf = input
 	autocrlf = input
+[init]
+	defaultBranch = main
 [pull]
 	rebase = false
