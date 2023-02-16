@@ -120,8 +120,6 @@ fi
 # Settings by YC
 ########################################################################
 
-setxkbmap jp -model pc106
-
 PS1="\[\033[1;32m\]\$(date +%Y/%m/%d_%H:%M:%S)\[\033[0m\] \[\033[33m\]\H:\w\n\[\033[0m\][\u@ \W]\[\033[36m\]\$(__git_ps1)\[\033[00m\]\$ "
 
 #
@@ -208,3 +206,5 @@ fi
 
 # Emacs: disable to display dbind-WARNING
 # export NO_AT_BRIDGE=1
+
+setxkbmap jp -model pc106
