@@ -211,6 +211,5 @@ setxkbmap jp -model pc106
 
 export EDITOR="emacsclient --create-frame"
 alias ed="emacs --daemon"
-alias emacs="emacsclient --create-frame"
 alias ec="emacsclient --create-frame"
 alias ek="emacsclient -e '(kill-emacs)'"
