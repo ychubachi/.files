@@ -208,3 +208,7 @@ fi
 # export NO_AT_BRIDGE=1
 
 setxkbmap jp -model pc106
+
+alias ed="emacs --daemon"
+alias ec="emacsclient --create-frame"
+alias ek="emacsclient -e '(kill-emacs)'"
