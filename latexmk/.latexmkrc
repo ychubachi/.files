@@ -28,15 +28,16 @@ $bibtex    = 'upbibtex %O %B';
 $dvipdf    = 'dvipdfmx %O -o %D %S';
 
 # 最近のlatex関連
-$lualatex  = 'lualatex ' . $latex_option;
-$xelatex   = 'xelatex  ' . $latex_option;
-$pdflatex  = 'pdflatex ' . $latex_option;
+$lualatex  = 'lualatex ' . $latex_option . ' %S';
+$xelatex   = 'xelatex  ' . $latex_option . ' %S';
+$pdflatex  = 'pdflatex ' . $latex_option . ' %S';
 
 # p/up/xe/lua共通
 $makeindex = 'upmendex %O -o %D %S';
 
 # BibLaTexパッケージ用
 $biber     = 'biber %O --bblencoding=utf8 -u -U --output_safechars %B';
+$bibtex    = 'bibtexu %O %B';
 
 # dvi, ps変換
 $dvips     = 'dvips %O -z -f %S | convbkmk -u > %D';

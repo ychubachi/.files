@@ -6,22 +6,22 @@
 !===============================================================================
 
 !!! Geometry
-Emacs.geometry: 120x30+0+0
-Emacs.lineSpacing: 0
+! Emacs.geometry: 120x30+0+0
+! Emacs.lineSpacing: 0
 
 !!! Fonts
 !! $ apt install fonts-ricty-diminished
 ! Emacs.font: Ricty Diminished
 !! $ apt install fonts-noto
-Emacs.font: Noto Sans Mono CJK JP-10
+! Emacs.font: Noto Sans Mono CJK JP-10
 
 !!! Look and Feel
-Emacs.cursorBlink: off
+! Emacs.cursorBlink: off
 !Emacs.coursorColor: dark green
 !Emacs.menuBar: on
-Emacs.toolBar: off
+!Emacs.toolBar: off
 !Emacs.tabBar: on
-Emacs.verticalScrollBars: off
+!Emacs.verticalScrollBars: off
 
 !!! IME
 Emacs.useXIM: off
