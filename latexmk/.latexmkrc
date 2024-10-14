@@ -24,7 +24,7 @@ if ($^O eq 'MSWin32') {
     $latex = $latex . ' -kanji=utf8 -no-guess-input-enc ';
 }
 $latex = $latex . ' %S';
-$bibtex    = 'upbibtex %O %B';
+$bibtex    = 'upbibtex %O %B'; # FIXME: あとから上書きされている？
 $dvipdf    = 'dvipdfmx %O -o %D %S';
 
 # 最近のlatex関連
