@@ -19,7 +19,7 @@
 $latex_option = '-shell-escape %O -synctex=1 -halt-on-error -interaction=nonstopmode -file-line-error';
 
 # pLaTeX関連 (uplatexを使うならlualatexを使うこと）
-$latex     = 'uplatex  ' . $latex_option;
+$latex     = 'platex  ' . $latex_option;
 if ($^O eq 'MSWin32') {
     $latex = $latex . ' -kanji=utf8 -no-guess-input-enc ';
 }

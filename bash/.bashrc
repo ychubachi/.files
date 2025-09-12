@@ -213,3 +213,13 @@ export EDITOR="emacsclient --create-frame"
 alias ed="emacs --daemon"
 alias ec="emacsclient --create-frame"
 alias ek="emacsclient -e '(kill-emacs)'"
+
+alias chrome="google-chrome &> /dev/null"
+alias inkscape="inkscape &> /dev/null"
+
+# fnm
+FNM_PATH="/home/yc/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "`fnm env`"
+fi
