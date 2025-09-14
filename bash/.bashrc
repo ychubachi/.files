@@ -207,12 +207,12 @@ fi
 # Emacs: disable to display dbind-WARNING
 # export NO_AT_BRIDGE=1
 
-setxkbmap jp -model pc106
+# setxkbmap jp -model pc106
 
-export EDITOR="emacsclient --create-frame"
-alias ed="emacs --daemon"
-alias ec="emacsclient --create-frame"
-alias ek="emacsclient -e '(kill-emacs)'"
+# export EDITOR="emacsclient --create-frame"
+# alias ed="emacs --daemon"
+# alias ec="emacsclient --create-frame"
+# alias ek="emacsclient -e '(kill-emacs)'"
 
 alias chrome="google-chrome &> /dev/null"
 alias inkscape="inkscape &> /dev/null"
